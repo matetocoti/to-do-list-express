@@ -8,11 +8,23 @@ const app = express()
 
 
 //Criando rota 
-//("/"") --> chamada do root
+
+//("/"") --> caminho da rota
 //(requisição ,resposta)
+
+
+//rota raiz
 app.get("/" ,(requisition ,response) => {
     response.send("<h1>Minha lista de tarefas</h1>")
 })
+
+
+app.get("/json" ,(requisition ,response) => {
+    response.json({title: "Tarefa X" ,done: true}) //Devolvendo resposta|response em formato de json
+
+})
+
+
 
 
 //Definindo porta do servidor
