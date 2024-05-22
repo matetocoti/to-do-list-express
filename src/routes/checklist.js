@@ -9,24 +9,10 @@ router.get("/" ,(requisition ,response) => {
     response.send() 
 })
 
-
-//Exemplo no java
-
-//@GetMapping(value = "/{id}")
-//public ResponseEntity<User> findById(@PathVariable Long id)
-
-//Eu passo um parametro para ser respondido pela url 
-//Exemplo: http://localhost:8765/hr-user/users/1
-//Nesse caso o parametro id faz parte da url
 router.get("/:id" ,(requisition ,response) => {
-    console.log(requisition.params.id) //Exibindo parametro da função no console
-    response.send(`ID: ${requisition.params.id}`) //Devolvendo o parametro id como resposta da requisição 
+    console.log(requisition.params.id) 
+    response.send(`ID: ${requisition.params.id}`) 
 })
-
-
-
-
-
 
 
 router.post("/" ,(requisition ,response) => {
@@ -36,6 +22,16 @@ router.post("/" ,(requisition ,response) => {
 })
 
 
+router.put("/:id" ,(requisition ,response) => {
+    console.log(requisition.body)
+    response.send(`PUT ID: ${requisition.params.id}`)
+})
+
+
+router.delete("/:id" ,(requisition ,response) => {
+    console.log(requisition.body)
+    response.send(`DELETE ID: ${requisition.params.id}`)
+})
 
 
 
