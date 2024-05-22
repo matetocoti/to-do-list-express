@@ -6,9 +6,9 @@ const router = express.Router()
 
 
 //Criando rota apartir do router
-router.get("checklist" ,(requisition ,response) => {
+router.get("/" ,(requisition ,response) => {
     console.log("Hello, world!")
-    response.send()
+    response.send() 
 })
 
 
