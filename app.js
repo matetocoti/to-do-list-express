@@ -7,6 +7,22 @@ const express = require("express")
 const app = express()
 
 
+//Usando middlewares
+
+//Mandando json 
+app.use(express.json())
+
+//                                  next --> permiti que a execução seja passada para o proximo middleware
+const log = (requisition ,response ,next) => {
+    console.log(requisition.body)
+    console.log(`Data: ${Date.now()}`)
+    next()
+}
+
+
+app.use(log)
+
+
 //Criando rota 
 
 //("/"") --> caminho da rota
@@ -20,10 +36,9 @@ app.get("/" ,(requisition ,response) => {
 
 
 app.get("/json" ,(requisition ,response) => {
+    console.log(requisition.body)
     response.json({title: "Tarefa X" ,done: true}) //Devolvendo resposta|response em formato de json
-
 })
-
 
 
 
