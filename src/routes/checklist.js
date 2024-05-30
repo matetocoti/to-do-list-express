@@ -35,16 +35,4 @@ router.delete("/:id" ,(requisition ,response) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router
